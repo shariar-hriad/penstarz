@@ -20,8 +20,8 @@ type NavbarProps = {
 }
 
 const Navbar = ({ topbarRef }: NavbarProps) => {
-    const [isScrolled, setIsScrolled] = useState(false)
-    const [isOpen, setIsOpen] = useState(false)
+    const [isScrolled, setIsScrolled] = useState<boolean>(false)
+    const [isOpen, setIsOpen] = useState<boolean>(false)
 
     useEffect(() => {
         const main = document.querySelector('main')
@@ -70,9 +70,10 @@ const Navbar = ({ topbarRef }: NavbarProps) => {
                                     to={navlink.id}
                                     spy={true}
                                     smooth={true}
-                                    offset={50}
+                                    offset={-80}
                                     duration={500}
-                                    className='cursor-pointer rounded p-3 text-base font-medium capitalize text-black-500 transition-all duration-300 hover:text-gray-500'
+                                    className='cursor-pointer rounded p-3 text-base font-medium capitalize text-black-500 transition-all hover:text-gray-500'
+                                    onClick={() => setIsOpen(false)}
                                 >
                                     {navlink.link}
                                 </SmoothLink>
