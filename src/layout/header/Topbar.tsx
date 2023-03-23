@@ -5,6 +5,10 @@ type TitleProps = {
     children: React.ReactNode
 }
 
+type TopbarProps = {
+    forwardedRef: React.MutableRefObject<any>
+}
+
 const Title = ({ children }: TitleProps) => {
     return (
         <span className='text-xs text-white transition-colors duration-500 group-hover:text-gray-500 lg:text-sm'>
@@ -13,9 +17,9 @@ const Title = ({ children }: TitleProps) => {
     )
 }
 
-const Topbar = () => {
+const Topbar = ({ forwardedRef }: TopbarProps) => {
     return (
-        <div className='flex h-[50px] items-center bg-secondary text-white'>
+        <div ref={forwardedRef} className='flex h-[50px] items-center bg-secondary text-white'>
             <div className='container'>
                 <div className='flex items-center gap-3'>
                     <Link href='tel:+19282551909' className='group flex items-center gap-2'>

@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaBars } from 'react-icons/fa'
 import { Link as SmoothLink } from 'react-scroll/modules'
 import SidebarMenu from './SidebarMenu'
@@ -15,11 +15,40 @@ const navlinks = [
     { id: 'login', link: 'login' },
 ]
 
-const Navbar = () => {
+type NavbarProps = {
+    topbarRef: React.MutableRefObject<any>
+}
+
+const Navbar = ({ topbarRef }: NavbarProps) => {
+    const [isScrolled, setIsScrolled] = useState(false)
     const [isOpen, setIsOpen] = useState(false)
 
+    useEffect(() => {
+        const main = document.querySelector('main')
+        const topbar = topbarRef.current.clientHeight
+
+        const handleScroll = () => {
+            const scrollTop = window.pageYOffset
+            if (scrollTop >= topbar) {
+                setIsScrolled(true)
+                main?.classList.add(`pt-[${topbar}]`)
+            } else {
+                setIsScrolled(false)
+                main?.classList.remove(`pt-[${topbar}]`)
+            }
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => {
+            window.removeEventListener('scroll', handleScroll)
+        }
+    }, [topbarRef])
+
     return (
-        <nav className='flex h-[80px] items-center shadow-sm'>
+        <nav
+            className={`flex h-[80px] items-center bg-white transition-all ${
+                isScrolled ? 'sticky top-0 z-50 w-full bg-white/90 shadow backdrop-blur' : null
+            }`}
+        >
             <div className='container'>
                 <div className='flex items-center justify-between'>
                     {/* Logo */}
@@ -35,17 +64,15 @@ const Navbar = () => {
                     {/* Desktop menu */}
                     <ul className='hidden gap-5 lg:flex'>
                         {navlinks.map((navlink, i) => (
-                            <li
-                                key={i}
-                                className='cursor-pointer rounded px-5 text-base font-medium capitalize text-black-500 transition-colors duration-300 hover:text-gray-500'
-                            >
+                            <li key={i}>
                                 <SmoothLink
-                                    activeClass='active'
+                                    activeClass='text-gray-600'
                                     to={navlink.id}
                                     spy={true}
                                     smooth={true}
-                                    offset={0}
+                                    offset={50}
                                     duration={500}
+                                    className='cursor-pointer rounded p-3 text-base font-medium capitalize text-black-500 transition-all duration-300 hover:text-gray-500'
                                 >
                                     {navlink.link}
                                 </SmoothLink>
@@ -71,6 +98,3 @@ const Navbar = () => {
 }
 
 export default Navbar
-
-//   git config --global user.email "shariarhossainriad@gmail.com"
-//   git config --global user.name "shariar-hriad"
