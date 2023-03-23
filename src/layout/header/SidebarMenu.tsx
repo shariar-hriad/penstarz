@@ -26,7 +26,7 @@ const SidebarMenu = ({ setIsOpen }: SidebarProps) => {
                 transition={{
                     type: 'spring',
                 }}
-                className='fixed inset-0 z-50 flex w-full max-w-[280px]  items-start gap-4 bg-gray-100 py-16 px-[15px] lg:hidden'
+                className='fixed inset-0 z-50 flex h-screen w-full max-w-[280px] items-start gap-4 bg-gray-100 py-16 px-[15px] lg:hidden'
             >
                 <ul className='flex flex-1 flex-col gap-5'>
                     {navlinks.map((navlink, i) => (

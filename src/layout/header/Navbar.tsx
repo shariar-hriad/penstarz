@@ -91,7 +91,7 @@ const Navbar = ({ topbarRef }: NavbarProps) => {
                         type: 'easeInOut',
                     }}
                     onClick={() => setIsOpen(false)}
-                    className='fixed inset-0 z-40 bg-black-900/60 lg:hidden'
+                    className='fixed inset-0 z-40 h-screen bg-black-900/60 lg:hidden'
                 />
             )}
         </nav>
