@@ -9,7 +9,7 @@ const Footer = (props: Props) => {
     return (
         <footer className='bg-gray-50 py-[30px] lg:py-[60px]'>
             <div className='container'>
-                <div className='columns-1 gap-5'>
+                <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3'>
                     {/* Site Info */}
                     <div className='flex basis-1/3 flex-col gap-y-2 p-3'>
                         <Link href='/'>
