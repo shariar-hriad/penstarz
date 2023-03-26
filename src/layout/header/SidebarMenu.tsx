@@ -24,7 +24,7 @@ const SidebarMenu = ({ setIsOpen }: SidebarProps) => {
                 animate={{ left: '0' }}
                 exit={{ left: '-100vw' }}
                 transition={{
-                    type: 'spring',
+                    type: 'easeIn',
                 }}
                 className='fixed inset-0 z-50 flex h-screen w-full max-w-[280px] items-start gap-4 bg-gray-100 py-16 px-[15px] lg:hidden'
             >
@@ -35,12 +35,13 @@ const SidebarMenu = ({ setIsOpen }: SidebarProps) => {
                             className='cursor-pointer rounded px-5 text-base font-medium capitalize text-black-500 transition-colors duration-300 hover:text-gray-500'
                         >
                             <SmoothLink
-                                activeClass='active'
+                                activeClass='text-gray-600'
                                 to={navlink.id}
                                 spy={true}
                                 smooth={true}
                                 offset={0}
                                 duration={500}
+                                className='cursor-pointer rounded p-3 text-base font-medium capitalize text-black-500 transition-all hover:text-gray-500'
                             >
                                 {navlink.link}
                             </SmoothLink>

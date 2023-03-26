@@ -1,6 +1,8 @@
 import { Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
+import Box from '@/components/shared/Box'
+import Text from '@/components/shared/Text'
 import 'swiper/css/navigation'
 
 const sliders = [
@@ -26,23 +28,28 @@ const sliders = [
 
 const Banner = () => {
     return (
-        <section id='home' className='flex items-center'>
+        <Box id='home' className='flex items-center'>
             <Swiper navigation={true} modules={[Navigation]}>
                 {sliders &&
                     sliders.map((slider, i) => (
                         <SwiperSlide key={i} style={{ background: `url(${slider.imgUrl})`, backgroundSize: 'cover' }}>
                             <div className='flex min-h-[500px] items-center justify-center bg-black-900/70 px-[15px]'>
                                 <div className='mx-auto w-[750px] text-center'>
-                                    <h1 className='mb-5 text-3xl font-medium text-white lg:text-5xl lg:leading-[58px]'>
+                                    <Text
+                                        as='h1'
+                                        className='mb-5 text-3xl font-medium text-white lg:text-5xl lg:leading-[58px]'
+                                    >
                                         {slider.title}
-                                    </h1>
-                                    <p className='text-lg text-white'>{slider.description}</p>
+                                    </Text>
+                                    <Text as='p' className='text-lg text-white'>
+                                        {slider.description}
+                                    </Text>
                                 </div>
                             </div>
                         </SwiperSlide>
                     ))}
             </Swiper>
-        </section>
+        </Box>
     )
 }
 

@@ -1,6 +1,6 @@
 const Contact = () => {
     return (
-        <section className='body-font relative text-gray-600'>
+        <section id='contact' className='body-font relative text-gray-600'>
             <div className='container mx-auto px-5 py-24'>
                 <div className='mb-12 flex w-full flex-col text-center'>
                     <h1 className='title-font mb-4 text-2xl font-medium text-gray-900 sm:text-3xl'>Contact Us</h1>
@@ -49,8 +49,8 @@ const Contact = () => {
                             </div>
                         </div>
                         <div className='w-full p-2'>
-                            <button className='mx-auto flex rounded border-0 bg-indigo-500 py-2 px-8 text-lg text-white hover:bg-indigo-600 focus:outline-none'>
-                                Button
+                            <button className='mx-auto flex rounded border-0 bg-teal-500 py-2 px-8 text-lg text-white hover:bg-teal-600 focus:outline-none'>
+                                Send
                             </button>
                         </div>
                         <div className='mt-8 w-full border-t border-gray-200 p-2 pt-8 text-center'>

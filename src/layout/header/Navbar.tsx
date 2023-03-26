@@ -72,8 +72,8 @@ const Navbar = ({ topbarRef }: NavbarProps) => {
                                     smooth={true}
                                     offset={-80}
                                     duration={500}
-                                    className='cursor-pointer rounded p-3 text-base font-medium capitalize text-black-500 transition-all hover:text-gray-500'
                                     onClick={() => setIsOpen(false)}
+                                    className='cursor-pointer rounded p-3 text-base font-medium capitalize text-black-500 transition-all hover:text-gray-500'
                                 >
                                     {navlink.link}
                                 </SmoothLink>

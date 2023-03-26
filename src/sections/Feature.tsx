@@ -35,7 +35,10 @@ const Feature = () => {
             <div className='grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3'>
                 {features &&
                     features.map((feature, i) => (
-                        <div key={i} className='flex flex-col items-start gap-5 rounded  p-5 shadow-card'>
+                        <div
+                            key={i}
+                            className='flex flex-col items-start gap-5 rounded-lg border border-gray-100 p-5 transition-all hover:shadow-card'
+                        >
                             <div className='flex h-[100px] w-[100px] items-center justify-center rounded-full bg-teal-500 text-5xl text-white shadow-md'>
                                 {feature.icon}
                             </div>
