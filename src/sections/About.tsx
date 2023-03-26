@@ -5,7 +5,7 @@ const About = () => {
             className='relative bg-cover bg-top bg-no-repeat'
             style={{ backgroundImage: `url('./about.jpg')` }}
         >
-            <div className='rounded-md bg-white/30 py-10 px-10 backdrop-blur-md'>
+            <div className='rounded-md bg-white/30 backdrop-blur-md'>
                 <div className='container mx-auto flex flex-col px-5 py-20'>
                     <div className='flex flex-col sm:flex-row'>
                         <div className='text-center sm:w-1/3 sm:py-8 sm:pr-8'>
