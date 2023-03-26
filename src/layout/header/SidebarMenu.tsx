@@ -39,7 +39,7 @@ const SidebarMenu = ({ setIsOpen }: SidebarProps) => {
                                 to={navlink.id}
                                 spy={true}
                                 smooth={true}
-                                offset={0}
+                                offset={-80}
                                 duration={500}
                                 className='cursor-pointer rounded p-3 text-base font-medium capitalize text-black-500 transition-all hover:text-gray-500'
                             >
